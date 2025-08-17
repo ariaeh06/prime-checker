@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Checker Aval Budan</title>
+<style>
+body {
+font-family: sans-serif;
+text-align: center;
+margin-top: 80px;
+}
+input, button {
+padding: 10px;
+font-size: 16px;
+}
+#result {
+margin-top: 20px;
+font-weight: bold;
+}
+</style>
+</head>
+<body>
+<h1>Checker Aval Budan</h1>
+<input id="num" type="number" placeholder="number ro benevis...">
+<button onclick="checkPrime()">Check Kon</button>
+<div id="result"></div>
+
+<script>
+function checkPrime() {
+let n = parseInt(document.getElementById("num").value);
+let result = document.getElementById("result");
+
+if (isNaN(n) || n < 2) {
+result.innerText = "lotfan number dorost vared kon!";
+return;
+}
+
+let isPrime = true;
+for (let t = 2; t < n; t++) {
+if (n % t === 0) {
+result.innerText = "because of " + t + " inja aval nist ❌";
+isPrime = false;
+break;
+}
+}
+
+if (isPrime) {
+result.innerText = "doroste ✅ in number avale";
+}
+}
+</script>
+</body>
+</html>
